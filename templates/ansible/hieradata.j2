@@ -38,7 +38,7 @@ aem_curator::install_author::aem_jvm_opts:
 - '-XX:+PrintGCApplicationStoppedTime'
 - '-XX:+HeapDumpOnOutOfMemoryError'
 aem_curator::install_author::aem_start_opts: "{{ aem.author.start_opts }}"
-aem_curator::install_author::run_mode: "{{ aem.author.run_mode }}"
+aem_curator::install_author::run_modes: "{{ aem.author.run_modes }}"
 aem_curator::install_author::repository_volume_device: "{{ aws[os_type].devicemap_data_b }}"
 
 aem_curator::install_publish::aem_profile: {{ aem.profile }}
@@ -53,7 +53,7 @@ aem_curator::install_publish::aem_jvm_opts:
 - '-XX:+PrintGCApplicationStoppedTime'
 - '-XX:+HeapDumpOnOutOfMemoryError'
 aem_curator::install_publish::aem_start_opts: "{{ aem.publish.start_opts }}"
-aem_curator::install_publish::run_mode: "{{ aem.publish.run_mode }}"
+aem_curator::install_publish::run_modes: "{{ aem.publish.run_modes }}"
 aem_curator::install_publish::repository_volume_device: "{{ aws[os_type].devicemap_data_b }}"
 
 aem_curator::install_dispatcher::apache_module_base_url: {{ aem.dispatcher.apache_module_base_url }}

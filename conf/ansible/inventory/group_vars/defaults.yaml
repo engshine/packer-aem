@@ -65,11 +65,11 @@ aem:
   author:
     jvm_mem_opts: "-Xss4m -Xms4096m -Xmx8192m"
     start_opts: ''
-    run_mode: 'author'
+    run_modes: []
   publish:
     jvm_mem_opts: "-Xss4m -Xms4096m -Xmx8192m"
     start_opts: ''
-    run_mode: 'publish'
+    run_modes: []
   dispatcher:
     version: 4.3.2
     apache_module_base_url: http://download.macromedia.com/dispatcher/download

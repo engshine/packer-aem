@@ -24,7 +24,10 @@ aws:
   subnet_id: overwrite-me
   resources:
     stack_name: packer-aem-resources-stack
-    s3_bucket: overwrite-me
+    packer_bucket: overwrite-me
+    enable_secrets_manager: 'true'
+    create_iam_packer_role: 'true'
+    create_packer_bucket: 'true'
   source_ami: overwrite-me
   ami_users: ''
   instance_profile: overwrite-me
@@ -37,9 +40,6 @@ aws:
       Value: overwrite-me
   certificate_arn: overwrite-me
   certificate_key_arn: overwrite-me
-  enable_secrets_manager: 'true'
-  create_iam_packer_role: 'true'
-  create_packer_bucket: 'true'
   aem_certs_base: overwrite-me
   aem_license: overwrite-me
   aem_license_base: overwrite-me
@@ -65,9 +65,11 @@ aem:
   author:
     jvm_mem_opts: "-Xss4m -Xms4096m -Xmx8192m"
     start_opts: ''
+    run_mode: 'author'
   publish:
     jvm_mem_opts: "-Xss4m -Xms4096m -Xmx8192m"
     start_opts: ''
+    run_mode: 'publish'
   dispatcher:
     version: 4.3.2
     apache_module_base_url: http://download.macromedia.com/dispatcher/download

@@ -40,8 +40,8 @@ aem_curator::install_author::aem_jvm_opts:
 aem_curator::install_author::aem_start_opts: "{{ aem.author.start_opts }}"
 {% if aem.author.run_modes is defined %}
 aem_curator::install_author::run_modes:
-{% for rm in aem.author.run_modes %}
-- {{ rm }}
+{% for run_mode in aem.author.run_modes %}
+- {{ run_mode }}
 {% endfor %}
 {% endif %}
 aem_curator::install_author::repository_volume_device: "{{ aws[os_type].devicemap_data_b }}"

@@ -25,7 +25,6 @@ config::custom_image_provisioner::post::timeout: {{ custom_image_provisioner.pos
 
 amazon_ssm_agent::proxy_url: {{ http_proxy }}
 
-
 aem_curator::install_author::aem_profile: {{ aem.profile }}
 aem_curator::install_author::aem_keystore_password: {{ aem.keystore_password }}
 aem_curator::install_author::aem_artifacts_base: {{ aem.artifacts_base }}
@@ -58,7 +57,12 @@ aem_curator::install_publish::aem_jvm_opts:
 - '-XX:+PrintGCApplicationStoppedTime'
 - '-XX:+HeapDumpOnOutOfMemoryError'
 aem_curator::install_publish::aem_start_opts: "{{ aem.publish.start_opts }}"
-aem_curator::install_publish::run_modes: {{ aem.publish.run_modes }}
+{% if aem.author.run_modes is defined %}
+aem_curator::install_publish::run_modes:
+{% for run_mode in aem.publish.run_modes %}
+- {{ run_mode }}
+{% endfor %}
+{% endif %}
 aem_curator::install_publish::repository_volume_device: "{{ aws[os_type].devicemap_data_b }}"
 
 aem_curator::install_dispatcher::apache_module_base_url: {{ aem.dispatcher.apache_module_base_url }}

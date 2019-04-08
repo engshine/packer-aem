@@ -7,7 +7,7 @@ mod 'pcfens/rhn_register', '1.5.0'
 mod 'puppet/archive', '1.3.0'
 mod 'puppet/yum', '2.1.0'
 mod 'puppet-collectd', '5.3.0'
-mod 'shinesolutions/aem_curator', :git => 'https://github.com/engshine/puppet-aem-curator', :commit => '30c2497069b987bd463eee9c68d4ee137e4e9e78'
+mod 'shinesolutions/aem_curator', :git => 'https://github.com/engshine/puppet-aem-curator', :commit => 'cc54952e3441ce27a82bce8820b840bec400d8be'
 mod 'shinesolutions/amazon_ssm_agent', '0.9.3'
 mod 'saz/limits', '2.5.0'
 mod 'puppetlabs/concat', '4.1.0'
@@ -21,7 +21,7 @@ mod 'bstopp/aem', :git => 'https://github.com/shinesolutions/puppet-aem', :commi
 mod 'puppet-healthcheck', '0.4.0'
 mod 'puppetlabs/apache', :git => 'https://github.com/shinesolutions/puppetlabs-apache', :commit => 'd4f89389faae77e8ef5618069085e429ce50e427'
 mod 'puppetlabs/java_ks', '1.6.0'
-mod 'shinesolutions/aem_resources', '3.8.0'
+mod 'shinesolutions/aem_resources', :git => 'https://github.com/engshine/puppet-aem-resources', :commit => '91df38b73c4eb095ba2d6b667ced228aba423b1c'
 
 # puppet-amazon-ssm-agent dependency, TODO: resolve sub-dependencies without declaring deps in packer-aem
 mod 'puppetlabs-inifile', '2.2.0'

@@ -39,6 +39,13 @@ aem_curator::install_author::aem_jvm_opts:
 - '-XX:+HeapDumpOnOutOfMemoryError'
 aem_curator::install_author::aem_start_opts: "{{ aem.author.start_opts }}"
 
+{% if aem.author.run_modes is defined %}
+aem_curator::install_author::run_modes:
+{% for run_mode in aem.author.run_modes %}
+- {{ run_mode }}
+{% endfor %}
+{% endif %}
+
 aem_curator::install_publish::aem_profile: {{ aem.profile }}
 aem_curator::install_publish::aem_keystore_password: {{ aem.keystore_password }}
 aem_curator::install_publish::aem_artifacts_base: {{ aem.artifacts_base }}
@@ -51,6 +58,13 @@ aem_curator::install_publish::aem_jvm_opts:
 - '-XX:+PrintGCApplicationStoppedTime'
 - '-XX:+HeapDumpOnOutOfMemoryError'
 aem_curator::install_publish::aem_start_opts: "{{ aem.publish.start_opts }}"
+
+{% if aem.author.run_modes is defined %}
+aem_curator::install_publish::run_modes:
+{% for run_mode in aem.publish.run_modes %}
+- {{ run_mode }}
+{% endfor %}
+{% endif %}
 
 aem_curator::install_dispatcher::apache_module_tarball: dispatcher-apache2.4-linux-x86_64-ssl-{{ aem.dispatcher.version }}.tar.gz
 aem_curator::install_dispatcher::apache_module_filename: dispatcher-apache2.4-{{ aem.dispatcher.version }}.so
